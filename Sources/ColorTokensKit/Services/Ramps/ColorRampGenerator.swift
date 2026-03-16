@@ -93,7 +93,7 @@ public class ColorRampGenerator {
         
         // Calculate t with consistent precision
         let rawT = (normalizedTargetHue - normalizedLowerHue + 360).normalizedHue / hueDiff
-        let t = rawT.rounded(to: ColorConstants.interpolationPrecision)
+        let t = rawT.rounded(toPlaces: ColorConstants.interpolationPrecision)
 
         // Interpolate between corresponding stops
         let result = interpolateStops(from: lowerRamp, to: upperRamp, t: t)
